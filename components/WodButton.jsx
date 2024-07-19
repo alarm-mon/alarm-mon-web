@@ -5,16 +5,17 @@ export default function WodButton() {
 	const [wodList, setWodList] = useState();
 
 	const handleClick = () => {
-		axios.get('http://localhost:3000/api/wodList').then(response => {
-			setWodList(response.data);
+		axios.get('http://localhost:4000/crossfit/daily/wod').then(response => {
+			setWodList(response.data.wodTexts);
+			console.log(response.data.wodTexts);
+			// debugger;
 		});
 	};
 
 	return (
 		<div>
 			<ul>
-				{wodList &&
-					wodList.map(wodList => <li key={wodList.id}>{wodList.name}</li>)}
+				{wodList && wodList.map(test => <li key={Math.random()}>{test}</li>)}
 			</ul>
 			<button onClick={handleClick}>조회</button>
 		</div>

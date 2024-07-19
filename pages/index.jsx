@@ -1,6 +1,4 @@
 import WodButton from '@/components/WodButton';
-import WodList from '@/components/WodList';
-import axios from 'axios';
 
 function HomePage() {
 	return (
